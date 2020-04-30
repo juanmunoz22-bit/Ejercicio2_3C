@@ -13,12 +13,13 @@ public class Leer {
 
 	FileReader fr = null;
 	BufferedReader br = null;
+	
 	/**
 	 * Metodo que lee una fecha en un archivo plano
 	 * @param fecha Archivo plano  que lee el sistema
 	 * @param burbuja1 Listado de caracteres
 	 */
-	public void leer(File numero, int[] burbuja1) {
+	public void leer(File numero, ArrayList<Integer> numeros) {
 		try {
 	        // Apertura del fichero y creacion de BufferedReader para poder
 	        // hacer una lectura comoda (disponer del metodo readLine()).
@@ -26,10 +27,8 @@ public class Leer {
 	        br = new BufferedReader(fr);
 	        // Lectura del fichero
 	        String linea;
-	        int num=0;
 	        while((linea=br.readLine())!=null) {
-	       	 	burbuja1[num] = Integer.parseInt(linea);
-	       	 	num++;
+	       	 	numeros.add(Integer.parseInt(linea));
 	           }
 	        
 	        

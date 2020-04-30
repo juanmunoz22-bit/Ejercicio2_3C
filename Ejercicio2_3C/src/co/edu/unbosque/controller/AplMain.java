@@ -8,10 +8,7 @@ public class AplMain {
 		
 		Ordenamiento o = new Ordenamiento();
 		
-		for (int i = 0; i < 10; i++) {
-			int[] a = (o.burbuja());
-			System.out.println(a[i]);
-		}
+		o.burbuja();
 	}
 
 }
