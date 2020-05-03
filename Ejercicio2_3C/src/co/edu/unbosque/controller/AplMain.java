@@ -9,6 +9,7 @@ public class AplMain {
 		Ordenamiento o = new Ordenamiento();
 		
 		o.burbuja();
+		
 	}
 
 }
