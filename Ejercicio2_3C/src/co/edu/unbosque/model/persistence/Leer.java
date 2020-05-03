@@ -19,7 +19,7 @@ public class Leer {
 	 * @param fecha Archivo plano  que lee el sistema
 	 * @param burbuja1 Listado de caracteres
 	 */
-	public void leer(File numero, ArrayList<Integer> numeros) {
+	public void leerNum(File numero, ArrayList<Integer> numeros) {
 		try {
 	        // Apertura del fichero y creacion de BufferedReader para poder
 	        // hacer una lectura comoda (disponer del metodo readLine()).

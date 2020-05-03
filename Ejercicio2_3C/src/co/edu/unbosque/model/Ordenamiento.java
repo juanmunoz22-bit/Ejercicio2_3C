@@ -11,36 +11,45 @@ public class Ordenamiento {
 
 	public void burbuja() {
 		int aux;
-		int[] burbuja = new int[10];
-		burbuja[0] = -32;
-		burbuja[1] = 45;
-		burbuja[2] = -2;
-		burbuja[3] = 0;
-		burbuja[4] = 4;
-		burbuja[5] = 32;
-		burbuja[6] = 2;
-		burbuja[7] = 1;
-		burbuja[8] = 100;
-		burbuja[9] = -100;
+		ArrayList<Integer> burbuja = new ArrayList<Integer>();
+		File numero = new File("./src/data/numero");
+		l.leerNum(numero, burbuja);
+
 		System.out.println("Arreglo sin ordenar");
 		for (int i = 0; i < 10; i++) {
-			System.out.print(burbuja[i] + " ");
+			System.out.print(burbuja.get(i) + " ");
+		}
+		
+		for (int i = 0; i < burbuja.size() - 1; i++) {
+			for (int j = i + 1; j < burbuja.size() - 1; j++) {
+				if (burbuja.get(i) < burbuja.get(j)) {
+					aux = burbuja.get(i);
+					burbuja.set(i, burbuja.get(j));
+					burbuja.set(j, aux);
+				}
+			}
+		}
+		System.out.println("\nArreglo ordenado de mayor a menor");
+		for (int i = 0; i < burbuja.size(); i++) {
+			System.out.print(burbuja.get(i) + " ");
+
 		}
 
-		for (int i = 0; i < burbuja.length - 1; i++) {
-			for (int j = 0; j < burbuja.length-1; j++) {
-				if (burbuja[j + 1] < burbuja[j]) {
-					aux = burbuja[j + 1];
-					burbuja[j + 1] = burbuja[j];
-					burbuja[j] = aux;
+		for (int i = 0; i < burbuja.size() - 1; i++) {
+			for (int j = 0; j < burbuja.size() - 1; j++) {
+				if (burbuja.get(j + 1) < burbuja.get(j)) {
+					aux = burbuja.get(j + 1);
+					burbuja.set(j + 1, burbuja.get(j));
+					burbuja.set(j, aux);
 				}
 			}
 		}
 		System.out.println("\nArreglo ordenado de menor a mayor");
-		for (int i = 0; i < burbuja.length; i++) {
-			System.out.print(burbuja[i] + " ");
+		for (int i = 0; i < burbuja.size(); i++) {
+			System.out.print(burbuja.get(i) + " ");
 
 		}
+
 	}
 
 }
